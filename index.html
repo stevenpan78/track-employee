@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-cloak ng-app="mainApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Tracker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div ng-controller="mainCtrl">
+        <div>
+            <h1>Westinghouse Employees</h1>
+        </div>
+        <div>
+            <h3><span>Id</span><span>Name</span><span>Color</span><span>Age</span></h3>
+        </div>
+        <div id='mbody' ng-repeat="emp in names">
+            <div id="close">
+            <span>{{$index+1}}</span><span>{{emp.name}}</span><span>{{emp.color}}</span><span>{{emp.age}}</span>
+            <input type="button" value="show" ng-click="show($index,emp)">
+            <input type="button" value="copy" ng-click="copy($index,emp)">
+            <input type="button" value="delete" ng-click="delete($index)">
+            <input type="button" value="update" ng-click="update($index,emp)">
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/mainController.js"></script>
+</body>
+</html>
